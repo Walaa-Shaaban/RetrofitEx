@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RetrofitApp</string>
+    <string name="pref_file">com.walaa.pref_file</string>
+    <string name="pref_login_status">com.walaa.pref_login_status</string>
+    <string name="pref_user_name">com.walaa.pref_username</string>
+    <string name="pref_image_url">com.walaa.pref.image_url</string>
+    <string name="pref_auth">com.walaa.auth</string>
+</resources>
