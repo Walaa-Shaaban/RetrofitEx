@@ -3,6 +3,7 @@ package com.example.walaa.retrofitapp.Api;
 
 import com.example.walaa.retrofitapp.User;
 
+import java.util.List;
 import java.util.Map;
 
 import okhttp3.RequestBody;
@@ -52,7 +53,7 @@ public interface ApiInterface {
     @Multipart
     @POST("getImage.php")
     Call<User> download_image(
-            @Part("user_id") RequestBody user_id
+            @Part("user_id") String user_id
     );
 
     @FormUrlEncoded
@@ -61,4 +62,7 @@ public interface ApiInterface {
             @Field("user_id") String user_id,
             @Field("username") String username
     );
+
+    @POST("getContent.php")
+    Call<List<User>> getContentRecycle();
 }

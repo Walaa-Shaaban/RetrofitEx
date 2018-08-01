@@ -1,13 +1,15 @@
 package com.example.walaa.retrofitapp;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ChangeUsernameActivity extends AppCompatActivity {
 
@@ -34,16 +36,18 @@ public class ChangeUsernameActivity extends AppCompatActivity {
                         prefConfig.readAuth(),
                         mUsername.getText().toString()
                 );
-                prefConfig.stopProgress();
-                prefConfig.writeName(mUsername.getText().toString());
-                startActivity(new Intent(ChangeUsernameActivity.this, MainActivity.class));
 
                 //Error not change username
-                /*
+
                 updateUsername.enqueue(new Callback<User>() {
                     @Override
                     public void onResponse(Call<User> call, Response<User> response) {
+                        if(response.isSuccessful()){
+                            prefConfig.stopProgress();
+                            prefConfig.writeName(mUsername.getText().toString());
+                            startActivity(new Intent(ChangeUsernameActivity.this, MainActivity.class));
 
+                        }
 
 
                     }
@@ -54,7 +58,7 @@ public class ChangeUsernameActivity extends AppCompatActivity {
 
                     }
                 });
-                */
+
             }
         });
 

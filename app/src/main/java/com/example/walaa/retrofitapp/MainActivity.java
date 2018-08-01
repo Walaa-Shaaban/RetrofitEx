@@ -4,16 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
 import com.theartofdev.edmodo.cropper.CropImage;
 
 import java.io.ByteArrayOutputStream;
@@ -21,8 +19,6 @@ import java.io.File;
 import java.io.IOException;
 
 import id.zelory.compressor.Compressor;
-import okhttp3.MediaType;
-import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Response;
 
@@ -98,9 +94,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void downloadImage() {
-        RequestBody user_id = RequestBody.create(MediaType.parse("text/plain"), prefConfig.readAuth());
+        /*
+        //RequestBody user_id = RequestBody.create(MediaType.parse("text/plain"), prefConfig.readAuth());
         Call<User> downloadImage = SplashActivity.apiInterface.
-                download_image(user_id);
+                download_image(prefConfig.readAuth());
         downloadImage.enqueue(new retrofit2.Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
@@ -112,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
                                 .into(mImgProfile);
                     }
                 } else {
-                    Log.e(response.errorBody().toString(), "***");
+                    prefConfig.writeAuth(response.errorBody().toString()+ "***");
                 }
             }
 
@@ -121,6 +118,8 @@ public class MainActivity extends AppCompatActivity {
                 Log.e(t.getMessage().toString(), "*****");
             }
         });
+        */
+
     }
 
     @Override

@@ -1,8 +1,8 @@
 package com.example.walaa.retrofitapp;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.example.walaa.retrofitapp.Api.ApiClient;
 import com.example.walaa.retrofitapp.Api.ApiInterface;
